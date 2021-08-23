@@ -1,0 +1,63 @@
+﻿body {}
+
+#galeria {
+    width: 800px;
+    height: 600px;
+    margin: 20px auto;
+    padding: 40px;
+    position: relative;
+}
+
+#galeria div {
+    position: absolute;
+    overflow: hidden;
+    opacity: 0.9;
+    -webkit-transition: all 0.5s linear;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: -3px -3px 50px #666;
+    box-shadow: -3px -3px 50px #666;
+    -webkit-transform: scale(0.60);
+}
+
+#galeria div:hover {
+    z-index: 999;
+    -webkit-transform: rotate(0deg);
+    opacity: 1;
+}
+
+#imagen1 {
+    top: 50px;
+    left: 130px;
+    z-index: 1;
+}
+
+#imagen2 {
+    top: 300px;
+    left: 100px;
+    z-index: 7;
+}
+
+#imagen3 {
+    top: 420px;
+    left: 350px;
+    z-index: 3;
+}
+
+#imagen4 {
+    top: 135px;
+    left: 450px;
+    z-index: 4;
+}
+
+#imagen5 {
+    top: -100px;
+    right: 200px;
+    z-index: 5;
+}
+
+#imagen6 {
+    top: 220px;
+    right: 120px;
+    z-index: 6;
+}
