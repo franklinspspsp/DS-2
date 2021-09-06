@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios con JS</title>
+
+    <script>
+        function Sumar() {
+            var nro1, nro2, suma, texto;
+            nro1 = document.getElementById("txtnro1").value;
+            nro2 = document.getElementById("txtnro2").value;
+            if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
+                texto = "Es necesario introducir numeros";
+            else {
+                suma = parseFloat(nro1) + parseFloat(nro2);
+                texto = suma;
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
+
+        function Restar() {
+            var nro1, nro2, resta, texto;
+            nro1 = document.getElementById("txtnro1").value;
+            nro2 = document.getElementById("txtnro2").value;
+            if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
+                texto = "Es necesario introducir numeros";
+            else if (nro1 > nro2)
+                texto = "El segundo numero es mayor";
+            else {
+                resta = parseFloat(nro1) - parseFloat(nro2);
+                texto = resta;
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
+
+        function Multiplicar() {
+            var nro1, nro2, multi, texto;
+            nro1 = document.getElementById("txtnro1").value;
+            nro2 = document.getElementById("txtnro2").value;
+            if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
+                texto = "Es necesario introducir numeros";
+            else if (nro1 == 0 || nro2 == 0)
+                texto = "0";
+            else {
+                multi = parseFloat(nro1) * parseFloat(nro2);
+                texto = multi;
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
+
+        function Dividir() {
+            var nro1, nro2, div, texto;
+            nro1 = document.getElementById("txtnro1").value;
+            nro2 = document.getElementById("txtnro2").value;
+            if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
+                texto = "Es necesario introducir numeros";
+            else if (nro1 == 0 || nro2 == 0)
+                texto = "Resultado no definido";
+            else if (nro1 > nro2)
+                texto = "El dividendo es menor";
+            else {
+                div = parseFloat(nro1) / parseFloat(nro2);
+                texto = div;
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
+    </script>
+
+</head>
+
+<body>
+    <p>Operaciones basicas de una calculadora</p>
+    <p>Ingrese nro1: <input type="text" id="txtnro1"></p>
+    <p>Ingrese nro2: <input type="text" id="txtnro2"></p>
+    <p>
+        <button type="button" onclick="Sumar()">Sumar</button>
+        <button type="button" onclick="Restar()">Restar</button>
+        <button type="button" onclick="Multiplicar()">Multiplicar</button>
+        <button type="button" onclick="Dividir()">Dividir</button>
+    </p>
+    <p id="lblResultado"></p>
+</body>
+
+</html>

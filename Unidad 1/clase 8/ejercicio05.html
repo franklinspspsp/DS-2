@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programacion Orientada a Objetos</title>
+
+    <script>
+        //Define un objeto
+        var empleado1 = Object();
+        empleado1.dni = "21321320";
+        empleado1.apellidos = "Castro";
+        empleado1.nombres = "Juan";
+        empleado1.salario = 1221;
+        empleado1.telefono = "9874563211";
+        //Definir un objeto 2
+        var empleado2 = {};
+        empleado2.dni = "21321320";
+        empleado2.apellidos = "Guzman";
+        empleado2.nombres = "Jose";
+        empleado2.salario = 1221;
+        empleado2.telefono = "9646846521";
+        //Definir un bojeto 3
+        var empleado3 = {
+                dni: 46132,
+                apellidos: "Gomez",
+                nombres: "Luis",
+                salario: 32156,
+                telefono: "96168432"
+            }
+            //Mostrar los atributos de los objetos
+        for (emp in empleado1)
+            document.writeln(emp + " = " + empleado1[emp]);
+        document.write("<br>");
+        for (emp in empleado2)
+            document.writeln(emp + " = " + empleado2[emp]);
+        document.write("<br>");
+        for (emp in empleado3)
+            document.writeln(emp + " = " + empleado3[emp]);
+        document.write("<br>");
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

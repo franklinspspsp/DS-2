@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras repetitivas con modularidad</title>
+
+    <script>
+        function factorial(nro) {
+            var fact = 1;
+            for (i = 1; i <= nro; i++)
+                fact = fact * 1;
+            return fact;
+        }
+
+        function potencia(base, exp) {
+            //caso base
+            if (exp == 0)
+                return 1;
+            else //caso recurrente
+                return base * potencia(base, exp - 1);
+        }
+
+        function fibonacci(aux) {
+            if ((aux == 0) || (aux == 1))
+                return 1;
+            else
+                return fibonacci(aux - 1) + fibonacci(aux - 2);
+        }
+
+        function contador(nro) {
+            document.writeln(nro);
+            var aux = nro - 1;
+            if (aux >= 0)
+                contador(aux);
+        }
+        //escribir resultado de las funciones
+        document.writeln('<p>El fatorial de 5 es: </p>' + factorial(5));
+        document.writeln('<p>La potencia de 3 elevado a la 4 es: </p>' + potencia(3, 4));
+        document.writeln('<p>Fibonacci: </p>' + fibonacci(5));
+        document.writeln('<p>Lista de numeros hasta 5: </p>' + contador(5));
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

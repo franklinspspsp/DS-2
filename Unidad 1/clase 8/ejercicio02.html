@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02</title>
+
+    <script type="text/javascript">
+        //Estructuras de decision
+        var ciudad = "Cusco";
+        if (ciudad == "Cusco")
+            alert("Es la ciudad es Cusco");
+        else if (ciudad == "Lima")
+            alert("Es la ciudad es Lima");
+        else
+            alert("Es otra ciudad");
+
+        //Segunda forma
+        var cierto = true;
+        var asignado = cierto ? "Hola" : "  La decision es falsa";
+        document.write("La variable asignada es: " + asignado + "<br>");
+
+        //Tercera forma
+        var numero = 2;
+        switch (numero) {
+            case 1:
+                document.write("El numero es 1" + "<br>");
+                break;
+            case 2:
+                document.write("El numero es 2" + "<br>");
+                break;
+            case 3:
+                document.write("El numero es 3" + "<br>");
+                break;
+            case 4:
+                document.write("El numero es 4" + "<br>");
+                break;
+            default:
+                document.write("Se escogio otro numero" + "<br>");
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
