@@ -6,14 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularios con JS</title>
+</head>
+
+<body>
 
     <script>
         function Sumar() {
             var nro1, nro2, suma, texto;
+            // Leer los numeros
             nro1 = document.getElementById("txtnro1").value;
             nro2 = document.getElementById("txtnro2").value;
+            // Validar datos del lado del cliente
             if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
-                texto = "Es necesario introducir numeros";
+                texto = "Es necesario introducir valores a los numeros";
             else {
                 suma = parseFloat(nro1) + parseFloat(nro2);
                 texto = suma;
@@ -26,7 +31,7 @@
             nro1 = document.getElementById("txtnro1").value;
             nro2 = document.getElementById("txtnro2").value;
             if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
-                texto = "Es necesario introducir numeros";
+                texto = "Es necesario introducir valores a los numeros";
             else if (nro1 > nro2)
                 texto = "El segundo numero es mayor";
             else {
@@ -36,12 +41,13 @@
             document.getElementById("lblResultado").innerHTML = texto;
         }
 
+        // Actividad
         function Multiplicar() {
             var nro1, nro2, multi, texto;
             nro1 = document.getElementById("txtnro1").value;
             nro2 = document.getElementById("txtnro2").value;
             if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
-                texto = "Es necesario introducir numeros";
+                texto = "Es necesario introducir valores a los numeros";
             else if (nro1 == 0 || nro2 == 0)
                 texto = "0";
             else {
@@ -56,7 +62,7 @@
             nro1 = document.getElementById("txtnro1").value;
             nro2 = document.getElementById("txtnro2").value;
             if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
-                texto = "Es necesario introducir numeros";
+                texto = "Es necesario introducir valores a los numeros";
             else if (nro1 == 0 || nro2 == 0)
                 texto = "Resultado no definido";
             else if (nro1 > nro2)
@@ -67,21 +73,90 @@
             }
             document.getElementById("lblResultado").innerHTML = texto;
         }
+
+        function factorial(n) {
+            var total = 1;
+            for (i = 1; i <= n; i++) {
+                total = total * i;
+            }
+            return total;
+        }
+
+        function Factorial() {
+            var nro1, texto;
+            nro1 = document.getElementById("txtnro1").value;
+            if (isNaN(parseFloat(nro1)))
+                texto = "Es necesario introducir valores a los numeros";
+            else {
+                texto = factorial(nro1);
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
+
+        function potencia(base, exp) {
+            //caso base
+            if (exp == 0)
+                return 1;
+            else //caso recurrente
+                return base * potencia(base, exp - 1);
+        }
+
+        function Potencia() {
+            var nro1, nro2, texto;
+            // Leer los numeros
+            nro1 = document.getElementById("txtnro1").value;
+            nro2 = document.getElementById("txtnro2").value;
+            // Validar datos del lado del cliente
+            if (isNaN(parseFloat(nro1)) || isNaN(parseFloat(nro2)))
+                texto = "Es necesario introducir valores a los numeros";
+            else {
+                texto = potencia(nro1, nro2);
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
+
+        function Seno() {
+            var nro1, texto;
+            nro1 = document.getElementById("txtnro1").value;
+            if (isNaN(parseFloat(nro1)))
+                texto = "Es necesario introducir valores a los numeros";
+            else {
+                texto = Math.sin(nro1);
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
+
+        function Tangente() {
+            var nro1, texto;
+            nro1 = document.getElementById("txtnro1").value;
+            if (isNaN(parseFloat(nro1)))
+                texto = "Es necesario introducir valores a los numeros";
+            else {
+                texto = Math.tan(nro1);
+            }
+            document.getElementById("lblResultado").innerHTML = texto;
+        }
     </script>
 
-</head>
-
-<body>
-    <p>Operaciones basicas de una calculadora</p>
-    <p>Ingrese nro1: <input type="text" id="txtnro1"></p>
-    <p>Ingrese nro2: <input type="text" id="txtnro2"></p>
+    <h1>Operaciones Aritmeticas</h1>
+    <p>Introduzca los numeros a operar</p>
+    <p><input type="text" id="txtnro1"></p>
+    <p><input type="text" id="txtnro2"></p>
     <p>
         <button type="button" onclick="Sumar()">Sumar</button>
         <button type="button" onclick="Restar()">Restar</button>
+        <!--Actividad-->
         <button type="button" onclick="Multiplicar()">Multiplicar</button>
         <button type="button" onclick="Dividir()">Dividir</button>
+        <br>
+        <button type="button" onclick="Factorial()">Factorial</button>
+        <button type="button" onclick="Potencia()">Potencia</button>
+        <button type="button" onclick="Seno()">Seno</button>
+        <button type="button" onclick="Tangente()">Tangente</button>
     </p>
+    <!--Mostrar resultado en una etiqueta-->
     <p id="lblResultado"></p>
+
 </body>
 
 </html>
