@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modularidad en JavaScript</title>
+</head>
+<body>
+    <script>
+        function factorial(nro)
+        {
+            var fac = 1;
+            for (i = 1; i <= nro; i++)
+                fac = fac * i;
+            return fac;
+        }
+        function potencia(base, exp)
+        {
+            if(exp == 0)
+                return 1;
+            else return base * potencia(base, exp -1);
+        }
+        document.writeln('<p>El factorial de 6 es: ' + factorial(6) + '</p>');
+        document.writeln('<p>La potencia de 2 al 3 es:' + potencia(2,3) + '</p>');
+    </script>
+</body>
+</html>

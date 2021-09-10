@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modularidad Anidada</title>
+    <script type="text/javascript">
+        function Proceso(a,b){
+            function mostrarSuma()
+            {
+                document.writeln("Suma=" + (a+b).toString());
+            }
+            function mostrarResta()
+            {
+                alert("Resta=" + (a-b).toString());
+            }
+            mostrarSuma();
+            mostrarResta();
+        }
+        Proceso(2,3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

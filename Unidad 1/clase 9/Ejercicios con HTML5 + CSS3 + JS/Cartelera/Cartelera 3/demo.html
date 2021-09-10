@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Conociendo las transiciones</title>
+
+<style>
+	/* estilos para los elementos contenedores */
+	/*body {background:#282828 url(img/light_noise_diagonal.png); font-size: 100%; font-family:Georgia, serif;}*/
+	.wrap {width:75%; margin:0 auto; overflow: hidden; text-align: center;}
+	#demo ul {width: 850px;margin:6em auto; padding:0;}
+	#demo li {list-style:none; float:left; display:block; margin:0 3%;}
+	
+	
+	/* nuestros items de juegos */
+	#demo .juego {
+		width:200px;
+		padding:2em 1em 1em 1em; 		
+		text-align: center;	
+		
+		-webkit-transition: all 300ms ease-out;
+		   -moz-transition: all 300ms ease-out;
+		    -ms-transition: all 300ms ease-out; 
+		     -o-transition: all 300ms ease-out;
+		        transition: all 300ms ease-out;
+	}		
+	#demo .juego img {
+		margin:auto;
+		display:block;		
+		
+		-webkit-transform: scale(.9);
+		   -moz-transform: scale(.9);
+		    -ms-transform: scale(.9);
+		     -o-transform: scale(.9));		
+		        transform: scale(.9);
+	
+		-webkit-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+		   -moz-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+		    -ms-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+		     -o-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+		        transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	}	
+	#demo .juego:hover {
+		background-color:#666666;
+		background-color: rgba(102, 102, 102,.3);
+		-webkit-border-radius: 10px;
+		border-radius: 10px;		
+		cursor: pointer;
+	}	
+	#demo .juego:hover img {
+		-moz-transform: scale(1);
+		-webkit-transform: scale(1);
+		-o-transform: scale(1));
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}	
+	#demo .juego:hover h2 {
+		color:#6d0707;		
+	}	
+			
+	
+	/*nuestros estilos para fuentes*/
+	#demo h1, #demo h2, #demo p {color: #666666;}
+	
+	#demo h1 {
+		color:white;
+		font-weight: bold;
+		font-style: italic;
+	}
+	#demo h2 {
+		font-family:Arial, sans-serif;
+		font-size:1em;
+		color:#da581f;
+		margin:1em 0 0 0;
+	}
+	#demo p {
+		font-family:Arial, sans-serif;
+		font-size:.8em;
+		margin:.5em 0 1em 0;
+	}
+	
+</style>
+
+</head>
+
+<body>
+	<div id="demo" class="wrap">
+			
+		<ul>
+			<li class="juego">
+				<img src="img/juego01.jpeg" />
+				<h2>Carcassonne</h2>
+				<p>Los Cátaros</p>
+			</li>
+			
+			<li class="juego">
+				<img src="img/juego02.jpeg" />
+				<h2>Caylus</h2>
+				<p>Felipe IV de Francia</p>
+			</li>
+			
+			<li class="juego">
+				<img src="img/juego03.jpeg" />
+				<h2>Catan</h2>
+				<p>La Gran Caravana</p>
+			</li>				
+		</ul>
+
+		</div><!-- .wrap -->
+
+	</body>
+
+</html>

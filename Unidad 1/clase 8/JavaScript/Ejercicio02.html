@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales en JavaScript</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Primera forma
+        var ciudad = "Cusco";
+        if (ciudad == "Cusco")
+            alert("La ciudad es Cusco");
+        else if (ciudad = "Lima")
+            alert("La ciudad es Lima");
+        else
+            alert("Es otra ciudad");
+        // Segunda forma (Operador ternario)
+        var cierto = true;
+        var asignada = cierto ? "hola" : "adios";
+        document.write(asignada);
+        // Tercera forma
+        var nro = 3;
+        switch (nro)
+        {
+            case 1:
+                console.log("El nro es 1");
+                break;
+            case 2:
+                console.log("El nro es 2");
+                break;
+            case 3:
+                console.log("El nro es 3");
+                break;
+            default:
+                console.log("El nro no ha sido evaluado");
+        }
+    </script>
+</body>
+</html>

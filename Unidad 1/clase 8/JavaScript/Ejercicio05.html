@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO</title>
+</head>
+<body>
+    <script>
+        // 1.-Definir un Objeto empleado
+        var empleado1 = Object();
+        empleado1.DNI = "23232323";
+        empleado1.Apellidos = "Estrada Vargas";
+        empleado1.Nombres = "Jose";
+        empleado1.Celular = "123232";
+        // 2.- Metodo
+        var empleado2 = {};
+        empleado2.DNI = "6456546";
+        empleado2.Apellidos = "Vargas Conza";
+        empleado2.Nombres = "Ana";
+        empleado2.Celular = "434332234";
+        // 3er Metodo
+        var empleado3 = {
+            DNI : "3443434",
+            Apellidos : "Alvarez",
+            Nombres : "Ana",
+            Celular : "12212" 
+        };
+        // Mostrar los datos del Objeto
+        for(p in empleado1)
+        {
+            document.writeln(p = " = " + empleado1[p] + "</br>");
+        }
+        for(p in empleado2)
+        {
+            document.writeln(p = " = " + empleado2[p] + "</br>");
+        }
+        for(p in empleado3)
+        {
+            document.writeln(p = " = " + empleado3[p] + "</br>");
+        }
+        // Definir un constructor
+        function Emp(DNI, Apellidos, Nombres, Celular){
+            this.dni = DNI;
+            this.apellidos = Apellidos;
+            this.nombres = Nombres;
+            this.celular = Celular;
+        }
+        var empleado4 = new Emp("34545454","Estrada Pacheco","Cyndi","323232");
+        for(var p in empleado4)
+        {
+            document.writeln(empleado4[p] + "</br>");
+        }
+    </script>
+</body>
+</html>
