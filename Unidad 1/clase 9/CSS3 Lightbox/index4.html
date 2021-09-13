@@ -13,11 +13,11 @@
     <title>CSS3 Lightbox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CSS3 Lightbox - A CSS-only lightbox" />
-    <meta name="keywords" content="css3, lightbox, overlay, effect, images, thumbnails" />
+    <meta name="keywords" content="css3, lightbox, overlay, effect, images, thumbnails, navigate" />
     <meta name="author" content="Codrops" />
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style3.css" />
 </head>
 
 <body id="page">
@@ -26,10 +26,10 @@
             <h1>CSS3 <span>Lightbox</span></h1>
             <h2>Un experimento con HTML5 y CSS3</h2>
             <p class="codrops-demos">
-                <a class="current-demo" href="index.html">Demo 1</a>
+                <a href="index.html">Demo 1</a>
                 <a href="index2.html">Demo 2</a>
                 <a href="index3.html">Demo 3</a>
-                <a href="index4.html">Demo 4</a>
+                <a class="current-demo" href="index4.html">Demo 4</a>
                 <a href="index5.html">Demo 5</a>
             </p>
         </header>
@@ -41,12 +41,14 @@
                         <span>Pointe</span>
                     </a>
                     <div class="lb-overlay" id="image-1">
-                        <a href="#page" class="lb-close">x Cerrar</a>
                         <img src="images/full/C10001.jpg" alt="image01" />
                         <div>
                             <h3>pointe <span>/point/</span></h3>
-                            <p>Danza realizada con las puntas de los pies</p>
+                            <p>Dance performed on the tips of the toes</p>
+                            <a href="#image-10" class="lb-prev">Prev</a>
+                            <a href="#image-2" class="lb-next">Next</a>
                         </div>
+                        <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
                 </li>
                 <li>
@@ -57,8 +59,10 @@
                     <div class="lb-overlay" id="image-2">
                         <img src="images/full/C10002.jpg" alt="image02" />
                         <div>
-                            <h3>port de bras <span>/muy buen ejercicio/</span></h3>
-                            <p>Un ejercicio para fortalecer la musculatura y la capacidad atletica de la bailarina</p>
+                            <h3>port de bras <span>/ˌpôr də ˈbrä/</span></h3>
+                            <p>An exercise designed to develop graceful movement and disposition of the arms</p>
+                            <a href="#image-1" class="lb-prev">Prev</a>
+                            <a href="#image-3" class="lb-next">Next</a>
                         </div>
                         <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
@@ -73,6 +77,8 @@
                         <div>
                             <h3>pli·é <span>/plēˈā/</span></h3>
                             <p>A movement in which a dancer bends the knees and straightens them again</p>
+                            <a href="#image-2" class="lb-prev">Prev</a>
+                            <a href="#image-4" class="lb-next">Next</a>
                         </div>
                         <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
@@ -87,6 +93,8 @@
                         <div>
                             <h3>a·da·gio <span>/əˈdäjō/</span></h3>
                             <p>A movement or composition marked to be played adagio</p>
+                            <a href="#image-3" class="lb-prev">Prev</a>
+                            <a href="#image-5" class="lb-next">Next</a>
                         </div>
                         <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
@@ -101,48 +109,88 @@
                         <div>
                             <h3>frap·pé<span>/fraˈpā/</span></h3>
                             <p>Involving a beating action of the toe of one foot against the ankle of the supporting leg</p>
+                            <a href="#image-4" class="lb-prev">Prev</a>
+                            <a href="#image-6" class="lb-next">Next</a>
                         </div>
                         <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
                 </li>
                 <li>
                     <a href="#image-6">
-                        <img src="images/thumbs/C10006.JPG" alt="image06" width="150" height="150">
+                        <img src="images/thumbs/C20101.JPG" alt="image06" width="150" height="150">
                         <span>Glissade</span>
                     </a>
                     <div class="lb-overlay" id="image-6">
-                        <img src="images/full/C10006.JPG" alt="image06" />
+                        <img src="images/full/C20101.JPG" alt="image06" />
                         <div>
                             <h3>glis·sade <span>/gliˈsäd/</span></h3>
                             <p>One leg is brushed outward from the body, which then takes the weight while the second leg is brushed in to meet it</p>
+                            <a href="#image-5" class="lb-prev">Prev</a>
+                            <a href="#image-7" class="lb-next">Next</a>
                         </div>
                         <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
                 </li>
                 <li>
                     <a href="#image-7">
-                        <img src="images/thumbs/C10007.JPG" alt="image07" width="150" height="150">
+                        <img src="images/thumbs/C20102.JPG" alt="image07" width="150" height="150">
                         <span>Jeté</span>
                     </a>
                     <div class="lb-overlay" id="image-7">
-                        <img src="images/full/C10007.JPG" alt="image07" />
+                        <img src="images/full/C20102.JPG" alt="image07" />
                         <div>
                             <h3>je·té <span>/zhə-ˈtā/</span></h3>
                             <p>A springing jump made from one foot to the other in any direction</p>
+                            <a href="#image-6" class="lb-prev">Prev</a>
+                            <a href="#image-8" class="lb-next">Next</a>
                         </div>
                         <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
                 </li>
                 <li>
                     <a href="#image-8">
-                        <img src="images/thumbs/C10008.JPG" alt="image08" width="150" height="150">
+                        <img src="images/thumbs/C20103.JPG" alt="image08" width="150" height="150">
                         <span>Piqué</span>
                     </a>
                     <div class="lb-overlay" id="image-8">
-                        <img src="images/full/C10008.JPG" alt="image08" />
+                        <img src="images/full/C20103.JPG" alt="image08" />
                         <div>
                             <h3>pi·qué <span>/pēˈkā/</span></h3>
                             <p>Strongly pointed toe of the lifted and extended leg sharply lowers to hit the floor then immediately rebounds upward</p>
+                            <a href="#image-7" class="lb-prev">Prev</a>
+                            <a href="#image-9" class="lb-next">Next</a>
+                        </div>
+                        <a href="#page" class="lb-close">x Cerrar</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#image-9">
+                        <img src="images/thumbs/C20104.JPG" alt="image09" width="150" height="150">
+                        <span>Arabesque</span>
+                    </a>
+                    <div class="lb-overlay" id="image-9">
+                        <img src="images/full/C20104.JPG" alt="image09" />
+                        <div>
+                            <h3>ar·a·besque <span>/ˌarəˈbesk/</span></h3>
+                            <p>Position of the body supported on one leg, with the other leg extended behind the body with the knee straight</p>
+                            <a href="#image-8" class="lb-prev">Prev</a>
+                            <a href="#image-10" class="lb-next">Next</a>
+                        </div>
+                        <a href="#page" class="lb-close">x Cerrar</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#image-10">
+                        <img src="images/thumbs/C20105.JPG" alt="image10" width="150" height="150">
+                        <span>Ballerina</span>
+                    </a>
+                    <div class="lb-overlay" id="image-10">
+                        <img src="images/full/C20105.JPG" alt="image10" />
+                        <div>
+                            <h3>bal·le·ri·na <span>/ˌbaləˈrēnə/</span></h3>
+                            <p>A female ballet dancer</p>
+                            <a href="#image-9" class="lb-prev">Prev</a>
+                            <a href="#image-1" class="lb-next">Next</a>
                         </div>
                         <a href="#page" class="lb-close">x Cerrar</a>
                     </div>
