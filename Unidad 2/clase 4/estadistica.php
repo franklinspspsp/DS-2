@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="navbar-toggler-icon"></span></button> <a class="navbar-brand" href="#">Brand</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
@@ -70,56 +70,57 @@
                 </div>
             </div>
         </nav>
+
         <!--Parte Principal-->
         <main>
             <div class="row">
                 <div class="col-md-8">
-                    <div class="carousel slide" id="carousel-369669">
-                        <ol class="carousel-indicators">
-                            <li data-slide-to="0" data-target="#carousel-369669" class="active">
-                            </li>
-                            <li data-slide-to="1" data-target="#carousel-369669">
-                            </li>
-                            <li data-slide-to="2" data-target="#carousel-369669">
-                            </li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" alt="Carousel Bootstrap First" src="https://www.layoutit.com/img/sports-q-c-1600-500-1.jpg">
-                                <div class="carousel-caption">
-                                    <h4>
-                                        First Thumbnail label
-                                    </h4>
-                                    <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" alt="Carousel Bootstrap Second" src="https://www.layoutit.com/img/sports-q-c-1600-500-2.jpg">
-                                <div class="carousel-caption">
-                                    <h4>
-                                        Second Thumbnail label
-                                    </h4>
-                                    <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" alt="Carousel Bootstrap Third" src="https://www.layoutit.com/img/sports-q-c-1600-500-3.jpg">
-                                <div class="carousel-caption">
-                                    <h4>
-                                        Third Thumbnail label
-                                    </h4>
-                                    <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                    </p>
-                                </div>
-                            </div>
-                        </div> <a class="carousel-control-prev" href="#carousel-369669" data-slide="prev"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a>
-                        <a class="carousel-control-next" href="#carousel-369669" data-slide="next"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
-                    </div>
+                    <?php
+                        include "conexion.php";
+                        $link = Conectarse();
+                    ?>
+                    <form action="#" method="POST">
+                        <p>CodLibro: <input type="text" name="txtCodLibro"></p>
+                        <p>Titulo: <input type="text" name="txtTitulo"></p>
+                        <p>Editorial: <input type="text" name="txtEditorial"></p>
+                        <p>Año: <input type="text" name="txtAnio"></p>
+                        <p>
+                            <input type="submit" name="btnAgregar" value="Agregar">
+                            <input type="submit" name="btnEliminar" value="Eliminar">
+                            <input type="submit" name="btnActualizar" value="Actualizar">
+                        </p>
+                    </form>
+                    <table>
+                        <thead>
+                            <th>CodLibro</th>
+                            <th>Titulo</th>
+                            <th>Editorial</th>
+                            <th>Año</th>
+                        </thead>
+                        <?php
+                            $consulta = "SELECT * FROM tlibro";
+                            $resultado = mysqli_query($link,$consulta);
+                            while($row = mysqli_fetch_array($resultado))
+                            {
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $row["codlibro"];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row["titulo"];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row["editorial"];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row["anio"];
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                            mysqli_free_result($resultado);
+                            mysqli_close($link);
+                        ?>
+                    </table>
                 </div>
                 <div class="col-md-4"></div>
             </div>
@@ -131,8 +132,40 @@
                 </div>
             </div>
         </footer>
-    </div>
 
+        <style>
+        table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            margin: 45px;
+            width: 480px;
+            text-align: left;
+            border-collapse: collapse;
+        }
+
+        th {
+            font-size: 13px;
+            font-weight: normal;
+            padding: 8px;
+            background: #b9c9fe;
+            border-top: 4px solid #aabcfe;
+            border-bottom: 1px solid #fff; color: #039;
+        }
+
+        td {
+            padding: 8px;
+            background: #e8edff;
+            border-bottom: 1px solid #fff;
+            color: #669;
+            border-top: 1px solid transparent;
+        }
+
+        tr:hover td {
+            background: #d0dafd;
+            color: #339;
+        }
+    </style>
+    </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
