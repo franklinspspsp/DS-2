@@ -110,6 +110,51 @@
                                 if($resultadoA) echo "<script>alert('se actualizo');</script>";
                             }
 
+                            else if(isset($_POST['btnBuscarA']))
+                            {
+                                $consultaA = "select apellidos, nombres, nacionalidad, profesion from tautor where codautor = '$codautorA'";
+                                $resultadoA = mysqli_query($linkA, $consultaA);
+                                if($resultadoA)
+                                {
+                                    ?>
+                                    <table>
+                                        <thead>
+                                            <th>Apellidos</th>
+                                            <th>Nombres</th>
+                                            <th>Nacionalidad</th>
+                                            <th>Profesion</th>
+                                        </thead>
+                                        <?php
+                                            while($rowA = mysqli_fetch_array($resultadoA))
+                                            {
+                                                echo "<tr>";
+                                                echo "<td>";
+                                                echo $rowA["apellidos"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $rowA["nombres"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $rowA["nacionalidad"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $rowA["profesion"];
+                                                echo "</td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>
+                                    </table>
+                                    <?php
+                                }
+                                else echo "<script>alert('Error');</script>";
+                            }
+
+                            else if(isset($_POST['btnListarA']))
+                            {
+                                $consultaA = "select * from tautor";
+                                $resultadoA = mysqli_query($linkA, $consultaA);
+                            }
+
                             // Tabla Libro
                             $codlibroL = $_POST['txtCodLibroL'];
                             $tituloL = $_POST ['txtTituloL'];
@@ -137,6 +182,47 @@
                                 $actualizarL ="update tlibro set titulo='$tituloL',editorial='$editorialL',anio='$anioL' where codlibro='$codlibroL'";
                                 $resultadoL=mysqli_query($linkL,$actualizarL);
                                 if($resultadoL) echo "<script>alert('se actualizo');</script>";
+                            }
+
+                            else if(isset($_POST['btnBuscarL']))
+                            {
+                                $consultaL = "select titulo, editorial, anio from tlibro where codlibro = '$codlibroL'";
+                                $resultadoL = mysqli_query($linkL, $consultaL);
+                                if($resultadoL)
+                                {
+                                    ?>
+                                    <table>
+                                        <thead>
+                                            <th>Titulo</th>
+                                            <th>Editorial</th>
+                                            <th>Año</th>
+                                        </thead>
+                                        <?php
+                                        while($rowL = mysqli_fetch_array($resultadoL))
+                                        {
+                                            echo "<tr>";
+                                            echo "<td>";
+                                            echo $rowL["titulo"];
+                                            echo "</td>";
+                                            echo "<td>";
+                                            echo $rowL["editorial"];
+                                            echo "</td>";
+                                            echo "<td>";
+                                            echo $rowL["anio"];
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        }
+                                        ?>
+                                    </table>
+                                    <?php
+                                }
+                                else echo "<script>alert('Error');</script>";
+                            }
+
+                            else if(isset($_POST['btnListarL']))
+                            {
+                                $consultaL = "select * from tlibro";
+                                $resultadoL = mysqli_query($linkL, $consultaL);
                             }
 
                             // Tabla Prestamo
@@ -167,6 +253,51 @@
                                 $resultadoP=mysqli_query($linkP,$actualizarP);
                                 if($resultadoP) echo "<script>alert('se actualizo');</script>";
                             }
+
+                            else if(isset($_POST['btnBuscarP']))
+                            {
+                                $consultaP = "select codautor, codlibro, fechaprestamo, fechadevolucion from tprestamo where codautor = '$codautorP'";
+                                $resultadoP = mysqli_query($linkP, $consultaP);
+                                if($resultadoP)
+                                {
+                                    ?>
+                                    <table>
+                                        <thead>
+                                            <th>CodAutor</th>
+                                            <th>CodLibro</th>
+                                            <th>Fecha Prestamo</th>
+                                            <th>Fecha Devolucion</th>
+                                        </thead>
+                                        <?php
+                                            while($rowP = mysqli_fetch_array($resultadoP))
+                                            {
+                                                echo "<tr>";
+                                                echo "<td>";
+                                                echo $rowP["codautor"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $rowP["codlibro"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $rowP["fechaprestamo"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $rowP["fechadevolucion"];
+                                                echo "</td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>
+                                    </table>
+                                    <?php
+                                }
+                                else echo "<script>alert('Error');</script>";
+                            }
+
+                            else if(isset($_POST['btnListarP']))
+                            {
+                                $consultaP = "select * from tprestamo";
+                                $resultadoP = mysqli_query($linkP, $consultaP);
+                            }
                         }
                     ?>
                     <form action="#" method="POST">
@@ -184,6 +315,8 @@
                                 <input type="submit" name="btnAgregarA" value="Agregar">
                                 <input type="submit" name="btnEliminarA" value="Eliminar">
                                 <input type="submit" name="btnActualizarA" value="Actualizar">
+                                <input type="submit" name="btnBuscarA" value="Buscar">
+                                <input type="submit" name="btnListarA" value="Listar">
                             </p>
                             <table>
                                 <thead>
@@ -234,6 +367,8 @@
                                 <input type="submit" name="btnAgregarL" value="Agregar">
                                 <input type="submit" name="btnEliminarL" value="Eliminar">
                                 <input type="submit" name="btnActualizarL" value="Actualizar">
+                                <input type="submit" name="btnBuscarL" value="Buscar">
+                                <input type="submit" name="btnListarL" value="Listar">
                             </p>
                             <table>
                                 <thead>
@@ -280,6 +415,8 @@
                                 <input type="submit" name="btnAgregarP" value="Agregar">
                                 <input type="submit" name="btnEliminarP" value="Eliminar">
                                 <input type="submit" name="btnActualizarP" value="Actualizar">
+                                <input type="submit" name="btnBuscarP" value="Buscar">
+                                <input type="submit" name="btnListarP" value="Listar">
                             </p>
                             <table>
                                 <thead>
