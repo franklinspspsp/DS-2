@@ -14,6 +14,7 @@
 			$autor->setApellidos($_POST["txtapellidos"]);
 			$autor->setNombres($_POST["txtnombres"]);
 			$autor->setNacionalidad($_POST["txtnacionalidad"]);
+			$autor->setProfesion($_POST["txtprofesion"]);
 			$i =  $dao->Agregar($autor);
 			if ($i == 1) {
 				echo "<script>alert('Se agrego autor');</script>";
