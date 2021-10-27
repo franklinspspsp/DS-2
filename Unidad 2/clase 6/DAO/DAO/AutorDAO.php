@@ -26,7 +26,7 @@ class AutorDAO implements IAutor
 	public function Agregar(Autor $autor){
 		$data_source = new DataSource();
 
-		$sql = "INSERT INTO tautor VALUES (:codautor,:apellidos,:nombres,:nacionalidad)";
+		$sql = "INSERT INTO tautor VALUES (:codautor,:apellidos,:nombres,:nacionalidad,:profesion)";
 
 		$resultado = $data_source->ejecutarActualizacion($sql,array(
 			':codautor'=>$autor->getCodAutor(),
@@ -41,7 +41,7 @@ class AutorDAO implements IAutor
 
 	public function Actualizar(Autor $autor){
 		$data_source = new DataSource();
-		$sql = "UPDATE tautor SET apellidos = :apellidos, nombres = :nombres, nacionalidad = :nacionalidad
+		$sql = "UPDATE tautor SET apellidos = :apellidos, nombres = :nombres, nacionalidad = :nacionalidad, profesion = :profesion
 				WHERE codautor = :codautor";
 		$resultado = $data_source->ejecutarActualizacion($sql,array(
 			':apellidos'=>$autor->getApellidos(),
